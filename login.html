@@ -1,0 +1,88 @@
+<!DOCTYPE html> <!--Vista del usuario administrador --> <!-- -->
+
+<html>
+
+
+
+    <head>
+        <meta charset="utf-8">
+        <html lang="es">
+        <title>Login</title>
+        <link rel="stylesheet" href="css/styles.css">
+
+        <link rel="stylesheet" href="css/social.css">
+
+    </head>
+
+
+
+    <body>
+    <div class="contenedor">
+
+        <div class="header">
+
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo">
+            </div>
+
+            <div class="menu-busqueda">
+                <div class="search">
+                    <form action="busqueda.php" method="POST">
+                        <input type="text" name="palabra" placeholder="Buscar..." id="search" class="input-search">
+                    </form>
+                </div>
+
+                <div class="links">
+                    <a href="index.php">Inicio</a>
+                    <a href="categorias.php">Categorías</a>
+                    <a href="nosotros.php">Quienes Somos</a>
+                    <a href="contacto.php">Contacto</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- **************************************************************-->
+
+
+        <div class="login">
+
+            <table border=1 width=100%>
+
+                <form action="login.php" method="POST">
+                    <tr>
+
+                        <td>
+                            Introduce tu usuario</br>
+                            <input type="text" name="usuario">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            Introduce tu contrasena</br>
+                            <input type="password" name="contrasena">
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <input type="submit">
+
+                        </td>
+                    </tr>
+
+                </form>
+            </table>
+        </div>
+
+
+
+    </div>
+    </body>
+</html>

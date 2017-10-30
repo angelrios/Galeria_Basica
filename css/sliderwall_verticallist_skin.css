@@ -1,0 +1,685 @@
+@charset "utf-8";
+
+/*
+The slider container. You can set the size, color, position and other
+attributes here.
+*/
+.sw_container {
+	/* Set the slider size here. */
+	width: 954px;
+	height: 405px;
+	background-color: #FFFFFF;
+	/* Center the slider. */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
+The container for the title and description of the slide. It contains 
+the background of the text and the text itself.
+*/
+.sw_infoComponent {
+	top: 0px;
+	left: 0px;
+	width: 661px !important;	/* This attribute will not be overwritten by the slider. */
+}
+
+/*
+The background for the title and description displayed on the slides.
+*/
+.sw_text_background {
+	/*
+	By default, the slider automatically sets the width of the background to
+	be the same as the width of the infoComponent container. If you want to
+	overwrite the width value set by the slider, use the !important tag.
+	*/
+	width: 100% !important;		/* This attribute will not be overwritten by the slider. */
+	background-color: #000000;
+	opacity: 0.6;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The title of the slide.
+*/
+.sw_title {
+	color: #FFFFFF;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+	margin-top: 10px;
+	margin-left: 14px;
+	margin-right: 14px;
+}
+
+/*
+The description of the slide.
+*/
+.sw_description {
+	color: #FFFFFF;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+	font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+	overflow: hidden;
+	margin-top: 5px;
+	margin-left: 14px;
+	margin-right: 14px;
+	margin-bottom: 15px;
+}
+
+/*
+The slide preloader. If you would like to change the preloader, simply replace the 
+.gif file with one of your own and, if it is required, set its size and position 
+from this CSS class.
+*/
+.sw_preloader {
+	background-image: url("../graphics/preloader.gif");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	left: 50%;
+	top: 50%;
+	margin-left: -17px;
+	margin-top: -17px;
+}
+
+/*
+The NORMAL state for the previous slide button. The button is vertically centered by
+the slider within the slider container if the top or bottom attributes are missing.
+If you want to vertically position the button use the top or bottom attributes with
+the !important tag (e.g. top: 40% !important;).
+*/
+.sw_previous_button {
+	width: 47px;
+	height: 48px;
+	left: 23px;
+	background-image: url("../graphics/btnPrev_normal.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: pointer;
+	opacity: 1;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The HOVER state for the previous slide button.
+*/
+.sw_previous_button:hover {
+	background-image: url("../graphics/btnPrev_hover.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: pointer;
+	opacity: 1;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The DISABLED state for the previous slide button. The buttons are disabled when the 
+first or last slide are displayed and the loopContent property of the slider is set 
+to false.
+*/
+.sw_previous_button_disabled {
+	background-image: url("../graphics/btnPrev_normal.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: auto;
+	opacity: 0.7;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The hover state for the DISABLED previous slide button. It is the same as the disabled
+state so that it won't be confusing for users.
+*/
+.sw_previous_button_disabled:hover {
+	background-image: url("../graphics/btnPrev_normal.png");	/* Overwrites the hover state of the normal button. */
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: auto;
+	opacity: 0.7;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The NORMAL state for the next slide button. The button is vertically centered by
+the slider within the slider container if the top or bottom attributes are missing.
+If you want to vertically position the button use the top or bottom attributes with
+the !important tag (e.g. top: 40% !important;)
+*/
+.sw_next_button {
+	width: 47px;
+	height: 48px;
+	right: 23px;
+	background-image: url("../graphics/btnNext_normal.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: pointer;
+	opacity: 1;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The HOVER state for the next slide button.
+*/
+.sw_next_button:hover {
+	background-image: url("../graphics/btnNext_hover.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	opacity: 1;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The DISABLED state for the next slide button. The buttons are disabled when the 
+first or last slide are displayed and the loopContent property of the slider is set 
+to false.
+*/
+.sw_next_button_disabled {
+	background-image: url("../graphics/btnNext_normal.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: auto;
+	opacity: 0.7;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The hover state for the DISABLED next slide button. It is the same as the disabled
+state so that it won't be confusing for users.
+*/
+.sw_next_button_disabled:hover {
+	background-image: url("../graphics/btnNext_normal.png");	/* Overwrites the hover state of the normal button. */
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: auto;
+	opacity: 0.7;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The timer element. For the SliderWall Vertical template, the timer is placed within the
+slider container and it cannot be displayer outside of it. If the slider is not in 
+auto-slideshow mode or showTimer is set to false the timer will not display.
+
+DO NOT set the width attribute because the slider uses it to resize the timer to
+the maximum width set.
+*/
+.sw_timer {
+	bottom: 0px;
+	left: 0px;
+	/*
+	The maximum width of the timer is set automatically by the slider to the
+	width of the slide container. To set the maximum width of the timer to a
+	different width use the !important tag to overwrite the slider's setting.
+	If you set max-width to a larger width than the width of the slide container,
+	the timer will only display the portion visible within the slide container.
+	*/
+	max-width: 661px !important;	/* This attribute will not be overwritten by the slider. */
+	height: 3px;
+	background-color: #000000;
+	opacity: 0.40;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The control bar (playlist) contains a list of items, each item conaining the 
+thumbnail image, title and description (on a single row) of the corresponding 
+slide. Each item has a normal and a selected state. The control bar also uses 
+two buttons for page navigation (previous and next page buttons).
+
+The control bar is always positioned in the top-right (default) or top-left corner,
+at the (width, 0) or (0, 0) coordinates (depending on the slider's playlistPosition
+- "left" or "right"). If you want to position the control bar to have spacing between 
+the margins of the slider and the control bar itself, you must use the positioning 
+properties (top, left and right) and overwrite them with the !important tag.
+*/
+.sw_controlBar {
+	width: 281px;
+	/*
+	The height of the control bar is automatically set to the height of the slider. To change 
+	the height, you must specify the !important tag so that the slider will not overwrite it.
+	*/
+	height: 403px !important;	/* This attribute will not be overwritten by the slider. */
+	position: absolute;
+	/*
+	The controlbar is always positioned by default at the top-right corner of the slider. If
+	you want to give it an offset position, you have to use the top and right attributes and
+	use the !important tag so that the slider will not overwrite them.
+	*/
+	top: 4px !important;	/* This attribute will not be overwritten by the slider. */
+	right: 4px !important;	/* This attribute will not be overwritten by the slider. */
+}
+
+/*
+The background for the entire control bar. The items can have their own backgrounds.
+The size of the background is always overwritten by the slider and it is set to be 
+the same size as the size of the control bar.
+*/
+.sw_controlBar_background {
+	background-color: #FFFFFF;	
+}
+
+/*
+The container for the page numbering displaying the current page of items and the total number
+of pages for the items list. The paging container can be positioned independently of the other 
+elements of the control bar.
+
+The type of pagination (bullets/numbering/none) can be set from the component settings 
+(thumbnailPaging parameter).
+*/
+.sw_page_numbering {
+	background-color: #DDDDDD;
+	font-family: "Lucida Grande", "Lucid Sans Unicode", Arial, sans-serif;
+	font-size: 12px;
+	color: #878787;
+	padding: 1px 8px;
+	border-radius: 7px;		/* Works only on CSS3 compatible browsers. */
+	bottom: 20px;
+}
+
+/*
+The container for the page bullets. The bullets are external images and each bullet has multiple
+states: normal, hover and selected. The bullet container can be positioned independently of the
+other elements of the control bar.
+
+The type of pagination (bullets/numbering/none) can be set from the component settings 
+(thumbnailPaging parameter).
+*/
+.sw_page_bullets {
+	bottom: 24px;
+}
+
+/*
+The NORMAL state of the bullet thumbnail.
+*/
+.sw_controlBar_bullet {
+	width: 11px;
+	height: 11px;
+	background-image: url("../graphics/thumb_normal.png");
+	background-repeat: none;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	margin-left: 4px;
+	margin-right: 4px;
+	cursor: pointer;
+}
+
+/*
+The HOVER state of the bullet thumbnail.
+*/
+.sw_controlBar_bullet:hover {
+	background-image: url("../graphics/thumb_hover.png");
+}
+
+/*
+The SELECTED state of the bullet thumbnail.
+*/
+.sw_controlBar_bullet_selected {
+	background-image: url("../graphics/thumb_selected.png");
+}
+
+/*
+The HOVER state for the selected bullet thumbnail. It is the same as the normal 
+selected state so that it won't be confusing for viewers.
+*/
+.sw_controlBar_bullet_selected:hover {
+	background-image: url("../graphics/thumb_selected.png");
+}
+
+/*
+The control bar is a 9 cell grid (3 x 3 cells), with the center cell
+containing the list of items. The margin cells can be used to add
+image borders to the list of items or even spacing between the margins 
+of the slider and the margins of the item list.
+
+If the margin elements should not have any size, meaning that the list of
+items has the same size as the control bar, then the margin cells should
+have their size properties (width and height) set to 0px.
+*/
+/*
+The top-left element of the grid control bar grid. For this design all
+the cells from the top row will be empty, therefore the cells will not
+have any size and they will not be displayed.
+*/
+.sw_controlBar_topLeft {
+	/* The top-left cell is not needed for this design so the size is set to 0x0. */
+	width: 0px;
+	height: 0px;
+	background-color: #FFFFFF;
+}
+
+/*
+The top-middle element of the control bar grid.
+*/
+.sw_controlBar_topMiddle {
+	/* The top-middle cell is not needed for this design so the size is set to 0x0. */
+	width: 0px;
+	height: 0px;
+	background-color: #FFFFFF;
+}
+
+/*
+The top-right element of the control bar grid.
+*/
+.sw_controlBar_topRight {
+	/* The top-right cell is not needed for this design so the size is set to 0x0. */
+	width: 0px;
+	height: 0px;
+	background-color: #FFFFFF;
+}
+
+/*
+The middle-left element of the control bar grid.
+*/
+.sw_controlBar_middleLeft {
+	/* The middle-left cell is not needed for this design so the size is set to 0x0. */
+	width: 0px;
+	height: 0px;
+	background-color: #FFFFFF;
+}
+
+/*
+The center cell of the control bar grid. This cell contains the actual 
+list of items. All the other cells can be used as containers for design
+elements (image borders/spacings).
+*/
+.sw_controlBar_itemsContainer {
+	/*
+	The width of the cell (the items list) is exactly the same as the width of the
+	control bar so the left and right cells (middle-left and middle-right) do not have 
+	any content and they will not be displayed in the control bar.
+	*/
+	width: 281px;
+	height: 352px;
+	background-color: #F3F3F3;
+}
+
+/*
+The middle-right element of the control bar grid.
+*/
+.sw_controlBar_middleRight {
+	/* The middle-right cell is not needed for this design so the size is set to 0x0. */
+	width: 0px;
+	height: 0px;
+	background-color: #FFFFFF;
+}
+
+/*
+The bottom-left element of the control bar grid.
+*/
+.sw_controlBar_bottomLeft {
+	/* The bottom-left cell is not needed for this design so the size is set to 0x0. */
+	width: 0px;
+	height: 0px;
+	background-color: #FFFFFF;
+}
+
+/*
+The bottom-middle element of the control bar grid will be used as bottom margin of the
+items list, so there is enough room to display the previous/next page buttons and
+the thumbnail paging element.
+*/
+.sw_controlBar_bottomMiddle {
+	width: 281px;
+	height: 46px;
+	background-color: #F3F3F3;
+}
+
+/*
+The bottom-right element of the control bar grid.
+*/
+.sw_controlBar_bottomRight {
+	/* The bottom-right cell is not needed for this design so the size is set to 0x0. */
+	width: 0px;
+	height: 0px;
+	background-color: #FFFFFF;
+}
+
+/*
+The NORMAL state for the previous page button displayed in the control bar.
+*/
+.sw_controlBar_previous_thumb_page_button {
+	bottom: 12px;
+	left: 17px;
+	width: 35px;
+	height: 35px;
+	z-index: 20;
+	background-image: url("../graphics/prevPage_normal.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: pointer;
+	opacity: 1;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The HOVER state for the previous page button displayed in the control bar.
+*/
+.sw_controlBar_previous_thumb_page_button:hover {
+	background-image: url("../graphics/prevPage_hover.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: pointer;
+	opacity: 1;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The DISABLED state of the previous page button.
+*/
+.sw_controlBar_previous_thumb_page_button_disabled {
+	background-image: url("../graphics/prevPage_normal.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: auto;
+	opacity: 0.5;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The HOVER state of the disabled previous page button. It is the same as the disabled
+state so that it won't be confusing for users.
+*/
+.sw_controlBar_previous_thumb_page_button_disabled:hover {
+	background-image: url("../graphics/prevPage_normal.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: auto;
+	opacity: 0.5;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The NORMAL state for the next page button displayed in the control bar.
+*/
+.sw_controlBar_next_thumb_page_button {
+	bottom: 12px;
+	right: 17px;
+	width: 35px;
+	height: 35px;
+	z-index: 20;
+	background-image: url("../graphics/nextPage_normal.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: pointer;
+	opacity: 1;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The HOVER state for the next page button displayed in the control bar.
+*/
+.sw_controlBar_next_thumb_page_button:hover {
+	background-image: url("../graphics/nextPage_hover.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	opacity: 1;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The DISABLED state of the next page button.
+*/
+.sw_controlBar_next_thumb_page_button_disabled {
+	background-image: url("../graphics/nextPage_normal.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: auto;
+	opacity: 0.5;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The HOVER state of the disabled next page button. It is the same as the disabled
+state so that it won't be confusing for users.
+*/
+.sw_controlBar_next_thumb_page_button_disabled:hover {
+	background-image: url("../graphics/nextPage_normal.png");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	cursor: auto;
+	opacity: 0.5;		/* Works only on CSS3 compatible browsers. */
+}
+
+/*
+The item of the control bar/playlist. The background color for the
+items should be set only from the sw_controlBar_item_background class.
+If the background color for the items is set from this CSS class, it
+will interfere with the sliding effect of selection background used when 
+a new item is selected.
+*/
+.sw_controlBar_item {
+	background-image: url("../graphics/item_top_border.png");
+	background-repeat: no-repeat;
+	width: 281px;
+	height: 69px;
+	position: relative;
+	float: left;
+	cursor: pointer;
+}
+
+/*
+The SELECTED state for the control bar/playlist item.
+*/
+.sw_controlBar_item_selected {
+	background-color: transparent !important;	/* This attribute will not be overwritten by the slider. */
+}
+
+/*
+The background for the NORMAL state of the item.
+*/
+.sw_controlBar_item_background {
+	background-color: #F3F3F3;
+	width: 281px;
+	height: 68px;
+	position: relative;
+	float: left;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+/*
+The background for the SELECTED state of the item.
+*/
+.sw_controlBar_selectedItem_background {
+	background-image: url("../graphics/selected_item_bg.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;		/* Works only on CSS3 compatible browsers. */
+	background-color: #0083C5;
+	width: 281px;
+	height: 68px;
+	position: absolute;
+	box-shadow: inset 0px 0px 5px #00669A;	/* Works only in CSS3 compatible browsers. */
+}
+
+/*
+This CSS class is used for styling every first item on each page
+of the items list. If there are no rules specified within this CSS
+class, the default class (sw_controlBar_item) will be applied.
+*/
+.sw_controlBar_item_first_on_page {
+	background-image: url("");
+}
+
+/*
+This CSS class is used for styling every last item on each page
+of the items list. If there are no rules specified within this CSS
+class, the default class (sw_controlBar_item) will be applied.
+*/
+.sw_controlBar_item_last_on_page {
+	background-image: url("../graphics/lastItem_background.png");
+	background-repeat: no-repeat;
+	width: 281px;
+	height: 75px;
+	position: relative;
+	float: left;
+	cursor: pointer;
+	border-bottom: 0px none #FFFFFF;
+}
+
+/*
+The NORMAL state of the title, displayed within the control bar item.
+*/
+.sw_controlBar_title {
+	font-family: "Lucida Grande", "Lucida Grande Unicode", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: #878787;
+	width: 180px;
+	overflow: hidden;
+	padding-left: 10px;
+	margin-top: 18px;
+	white-space: nowrap;
+}
+
+/*
+The SELECTED state of the title, displayed within the control bar item.
+*/
+.sw_controlBar_title_selected {
+	color: #FFFFFF;
+}
+
+/*
+The NORMAL state of the description, displayed within the control bar item.
+*/
+.sw_controlBar_description {
+	font-family: "Lucida Grande", "Lucida Grande Unicode", Arial, sans-serif;
+	font-weight: normal;
+	font-size: 11px;
+	color: #878787;
+	width: 180px;
+	overflow: hidden;
+	padding-left: 10px;
+	margin-top: -7px;
+	white-space: nowrap;
+}
+
+/*
+The SELECTED state of the description, displayed within the control bar item.
+*/
+.sw_controlBar_description_selected {
+	color: #FFFFFF;
+}
+
+/*
+The image thumbnail of the slide is displayed within the control bar item.
+The thumbnails have a normal and a selected state, like their container
+item. This is the NORMAL state of the thumbnail image.
+*/
+.sw_controlBar_thumbnail {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	width: 70px;
+	height: 49px;
+	overflow: hidden;
+	background-color: #AAAAAA;
+}
+
+/*
+The SELECTED state of the thumbnail image.
+*/
+.sw_controlBar_thumbnail_selected {
+	background-color: #B3DAEE !important;	/* This attribute will not be overwritten by the slider. */
+}
+
+/*
+Styling rules for the container of the slides. You can set the size of
+the contaner and position it within the boundaries of the slider.
+*/
+.sw_slider_container {
+	left: 4px;
+	top: 4px;
+	width: 661px;
+	height: 397px;
+}
+
+/*
+Styling rules for the HTML content of the slides - not applicable for slides
+that have the type image or object.
+*/
+.sw_slider_content {
+	
+}
